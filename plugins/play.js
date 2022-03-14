@@ -75,7 +75,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
 }
 handler.help = ['play'].map(v => v + ' <query>')
 handler.tags = ['downloader']
-handler.command = /^(dj|musik|song|lagu|p(lay)?)$/i
+handler.command = /^(dj|musik|song|yt|p(lay)?)$/i
 
 handler.exp = 3
 
