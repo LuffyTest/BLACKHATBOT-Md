@@ -33,7 +33,7 @@ module.exports = {
       year: 'numeric'
     }).format(d)
     let _uptime = process.uptime() * 1000
-    let time = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss') 
+    let time = require('moment-timezone').tz('Asia/Colombo').format('HH:mm:ss') 
     let runtime = clockString(_uptime)
     let mode = //  
         global.infobot = `
@@ -416,12 +416,12 @@ module.exports = {
                     if (xp > 200) m.reply('Ngecit -_-') // Hehehe
                     else m.exp += xp
                     if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-                    	sock.sendButton(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy* or *${usedPrefix}buyall*`, wm, null, [[`Buy`, `#buy`], [`Buyall`, `#buyall`]], m)
+                    	sock.sendButton(m.chat, `Your limit is up, please buy via *${usedPrefix}buy* or *${usedPrefix}buyall*`, wm, null, [[`Buy`, `#buy`], [`Buyall`, `#buyall`]], m)
                        // sock.reply(m.chat, `Limit anda habis, silahkan beli melalui *${usedPrefix}buy*`, m)
                         continue // Limit habis
                     }
                     if (plugin.level > _user.level) {
-                    	sock.sendButton(m.chat, `Diperlukan level *${plugin.level}* untuk menggunakan perintah ini. Level kamu *${_user.level},* naikan Levelmu dengan mengetik *${usedPrefix}levelup* atau klik button di bawah!`, wm, null, [[`Levelup`, `#levelup`]], m)
+                    	sock.sendButton(m.chat, `Level *${plugin.level}* is required to use this command. Your level *${_user.level},* Increase your Level by typing *${usedPrefix}levelup* or click the button below!`, wm, null, [[`Levelup`, `#levelup`]], m)
                        // sock.reply(m.chat, `diperlukan level ${plugin.level} untuk menggunakan perintah ini. Level kamu ${_user.level}`, m)
                         continue // If the level has not been reached
                     }
@@ -580,17 +580,17 @@ Untuk mematikan fitur ini, ketik
 
 global.dfail = (type, m, conn) => {
     let msg = {
-        rowner: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used by  _*Owner!*_\n\nPerintah ini hanya dapat digunakan oleh _*Owner!*_.',
-        owner: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used by  _*Owner!*_\n\nPerintah ini hanya dapat digunakan oleh _*Owner!*_.',
-        mods: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used by  _*Moderator!*_\n\nPerintah ini hanya dapat digunakan oleh _*Moderator!*_.',
-        premium: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used by  _*Premium User!*_\nPlease register premium first\n\nPerintah ini hanya dapat digunakan oleh _*Pengguna Premium!*_\nSilahkan daftar premium terlebih dahulu.',
-        group: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used in  _*Groups!*_\n\nPerintah ini hanya dapat digunakan di dalam  _*Grup!*_.',
-        private: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used in  _*Private Chat!*_\n\nPerintah ini hanya dapat digunakan di _*Chat Pribadi!*_.',
-        admin: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used by  _*Admin!*_\n\nPerintah ini hanya dapat digunakan oleh _*Admin!*_.',
-        botAdmin: '*────「 ACCESS DENIED 」────*\n\n\nMake the bot the _*Admin*_ to use this command\n\nJadikan bot sebagai _*Admin*_ untuk menggunakan perintah ini!.',
-        unreg: '*────「 ACCESS DENIED 」────*\n\n\nPlease register to use this feature by typing:\n*#register <name>.<age>*\n\nExample: *#register rasel.18*\n\nSilahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar <nama>.<umur>*\n\nContoh: *#daftar rasel.18*',
-        nsfw: '*────「 ACCESS DENIED 」────*\n\n\nNSFW doesn\'t active.\nNSFW tidak aktif!.',
-        rpg: '*────「 ACCESS DENIED 」────*\n\n\nRPG doesn\'t active.\nRPG tidak aktif!.'
+        rowner: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used by  _*Owner!_*',
+        owner: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used by  _*Owner!*_.',
+        mods: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used by  _*Moderator!*_.',
+        premium: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used by  _*Premium User!*_',
+        group: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used in  _*Groups!*_',
+        private: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used in  _*Private Chat!*_',
+        admin: '*────「 ACCESS DENIED 」────*\n\n\nThis command can only be used by  _*Admin!*_',
+        botAdmin: '*────「 ACCESS DENIED 」────*\n\n\nMake the bot the _*Admin*_ to use this command.',
+        unreg: '*────「 ACCESS DENIED 」────*\n\n\nPlease register to use this feature by typing:\n*#register <name>.<age>*\n\nExample: *#register Alice.18*',
+        nsfw: '*────「 ACCESS DENIED 」────*\n\n\nNSFW doesn\'t active.',
+        rpg: '*────「 ACCESS DENIED 」────*\n\n\nRPG doesn\'t active.'
       }[type]
     if (msg) return conn.sendButton(m.chat, msg.trim(), wm, null, [[`Menu`, `#menu`]], m)
     }
