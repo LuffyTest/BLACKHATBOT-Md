@@ -1,32 +1,32 @@
-let handler = async (m, { isAdmin, isOwner, conn, args, usedPrefix, command }) => {
-  if (!(isAdmin || isOwner)) {
-                global.dfail('admin', m, conn)
-                throw false
-                }
+let { GroupSettingChange } = require('@adiwajshing/baileys')
+let handler = async (m, { conn, args, usedPrefix, command }) => {
 	let isClose = {
-		'open': 'not_announcement',
-		'buka': 'not_announcement',
-		'on': 'not_announcement',
-		'1': 'not_announcement',
-		'close': 'announcement',
-		'tutup': 'announcement',
-		'off': 'announcement',
-		'0': 'announcement',
+		'open': false,
+		'buka': false,
+		'on': false,
+		'1': false,
+		'close': true,
+		'tutup': true,
+		'off': true,
+		'0': true,
 	}[(args[0] || '')]
 	if (isClose === undefined) {
-		await conn.sendButton(m.chat, `
-contoh:
-${usedPrefix + command} tutup
-${usedPrefix + command} buka
-	`.trim(), wm, null, [['Buka', '#grup 1'], ['Tutup', '#grup 0']])
-		throw false
+		await conn.send2Button(m.chat, `
+Use:
+${usedPrefix + command} <open/close>
+Example:
+${usedPrefix + command} open
+${usedPrefix + command} close
+	`.trim(), 'wm', 'OPEN', ',grup 1', 'CLOSE', ',grup 0', m)
+		throw 0
 	}
-	await conn.groupSettingUpdate(m.chat, isClose)
+	await conn.groupSettingChange(m.chat, GroupSettingChange.messageSend, isClose)
 }
-handler.help = ['grup <open/close>']
-handler.tags = ['admin']
-handler.command = /^(gro?up|gc?)$/i
+handler.help = ['group <open/close>']
+handler.tags = ['group']
+handler.command = /^(gro?up)$/i
 
+handler.admin = true
 handler.botAdmin = true
 
 module.exports = handler
