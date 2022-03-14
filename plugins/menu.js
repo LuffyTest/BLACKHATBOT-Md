@@ -9,12 +9,28 @@ let fetch = require('node-fetch')
 let { perfomance } = require('perf_hooks')
 let moment = require('moment-timezone')
 const defaultMenu = {
-          before: `*Hallo Kak 👋 Saya BLACKHATBOT, Jika Ada Sebuah Bug Atau Error Dalam Fitur Harap Laporkan Ke Owner Atau Developer Bot Tulis Aja !owner Terima Kasih*
-Klik Disini Kak=>%readmore`.trimStart(),
-  header: '╭─「 *%category* 」',
-  body: '│ • %cmd %islimit %isPremium',
-  footer: '╰────\n',
-          after: ` `,
+          before: `
+┏━〔 %me 〕
+┠ Hey, %name!
+┃
+┠ 🚀 Left :*%limit Limit*
+┠ 🎭 Role :*%role*
+┠ 📈 Level :*%level*
+┠ 💠 Total XP : *%totalexp*
+┃ 
+┠ 📅 Date: *%week %weton, %date*
+┠ 🕓 Time: *%time*
+┃
+┠ 🔰 UpTime : *%uptime*
+┠ 🌿 DataBase : %rtotalreg from %totalreg
+┗━━━━━━━━
+%readmore`.trimStart(),
+  header: '┏━━━❰･%category･❱━━━',
+  body: '┠ %cmd %islimit %isPremium',
+  footer: '┗━━━━\n',
+  after: `
+*Alice 🤍🥀@^%version*
+`,
 }
 
 let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
