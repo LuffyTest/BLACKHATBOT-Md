@@ -33,12 +33,12 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   if (yt === false) throw 'semua server gagal'
   if (yt2 === false) throw 'semua server gagal'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
-  let konrasel = `*───「 YT Downloader 」───*
+  let konrasel = `
   
-*Judulnya:* ${title}
-*Ukuran File Audionya:* ${filesizeF}
-*Ukuran File Videonya:* ${yt2.filesizeF}
-*Server Downloadnya:* ${usedServer}`
+*🔮 Title:* ${title}
+*🔻 Audio File Size:* ${filesizeF}
+*🔻 Video File Size:* ${yt2.filesizeF}
+*🍃 Server:* ${usedServer}`
 const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         templateMessage: {
             hydratedTemplate: {
@@ -48,7 +48,7 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
                 hydratedButtons: [{
                   index: 0,
                    urlButton: {
-                        displayText: 'Url YouTube',
+                        displayText: 'YouTube Url',
                         url: `${vid.url}`
                     }
                 }, {
