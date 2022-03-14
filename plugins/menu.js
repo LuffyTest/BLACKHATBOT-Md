@@ -206,7 +206,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     let uptime = clockString(_uptime)
     let waktuwib = moment.tz('Asia/Colombo').format('HH:mm:ss')
     
-let anu = `★ ° . *　　　°　.　°☆ 　. * ● ¸ 
+    let aoa = `${ucapan()} ${name}.`.trim()
+    let anu = `★ ° . *　　　°　.　°☆ 　. * ● ¸ 
 . 　　　★ 　° :. ★　 * • ○ ° ★　 
 .　 * 　.　 　　　　　. 　 
 ° 　. ● . ★ ° . *　　　°　.　°☆ 
