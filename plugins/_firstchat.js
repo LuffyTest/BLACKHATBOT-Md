@@ -9,12 +9,12 @@ handler.all = async function (m, { isBlocked }) {
     let name = conn.user.name
     if (new Date - user.pc < 86400000) return // setiap 24 jam sekali
     let anu = `
-Hai ${await this.getName(m.sender)}, ${ucapan()}
-Saya adalah ${namabot}, salah satu bot whatsapp multi device ada yang bisa saya bantu? 
+Hi ${await this.getName(m.sender)}, ${ucapan()}
+I'm ${botname}, one of the multi-device whatsapp bots, can I help you?
 
-Sebelum menggunakan bot, baca rules bot terlebih dahulu dengan mengetik *#peraturan* atau *#rules*.
+Before using a bot, read the bot's rules first by typing *#rules* or *.rules*.
 
-Mau chat sama simi(bot)? ketik *#on simi*
+Want to chat with simi(bot)? type *.on simi*
 `
 await conn.sendTemplateButtonLoc(m.chat, anu.trim(), wm, await(await fetch(img)).buffer(), `Menu`, `#menu`, m)
 user.pc = new Date * 1
@@ -23,19 +23,19 @@ user.pc = new Date * 1
 module.exports = handler
 
 function ucapan() {
-  const time = moment.tz('Asia/Jakarta').format('HH')
-  res = "jangan lupa tidur yaah, lop yu<3"
+  const time = moment.tz('Asia/Colombo').format('HH')
+  res = "don't forget to sleep, lol <3"
   if (time >= 4) {
-    res = "Selamat Pagi ☀"
+    res = "Good morning ☀"
   }
   if (time > 10) {
-    res = "Selamat Siang 🌞"
+    res = "Good afternoon 🌞"
   }
   if (time >= 15) {
-    res = "Selamat Sore 🌝"
+    res = "Good afternoon 🌝"
   }
   if (time >= 18) {
-    res = "Selamat Malam 🌚"
+    res = "Good night 🌚"
   }
   return res
 }
