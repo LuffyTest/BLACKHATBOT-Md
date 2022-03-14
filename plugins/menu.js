@@ -39,7 +39,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
   let arrayMenu = ['all', 'anime', 'update', 'edukasi', 'news', 'random', 'game', 'xp', 'islamic', 'stiker', 'rpg', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'vote', 'nsfw', 'audio', 'jadibot', 'info', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
-    'main': 'UTAMA',
+    'main': 'ALL MENU',
     'game': 'GAME',
     'anime': 'ANIME', 
     'rpg': 'RPG', 
@@ -51,7 +51,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     'kerang': 'KERANG AJAIB',
     'quotes': 'QUOTES',
     'admin': `ADMIN ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
-    'group': 'GRUP',
+    'group': 'GROUP',
     'premium': 'PREMIUM',
     'internet': 'INTERNET',
     'anonymous': 'ANONYMOUS CHAT',
@@ -204,23 +204,27 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     }
     let muptime = clockString(_muptime)
     let uptime = clockString(_uptime)
-    let waktuwib = moment.tz('Asia/Jakarta').format('HH:mm:ss')
+    let waktuwib = moment.tz('Asia/Colombo').format('HH:mm:ss')
     
-let aoa = `${ucapan()} ${name}.`.trim()
-let anu = `*─────❑ 「 RULES BOT 」 ❑─────*
-☞ *Dilarang Spam* ❌
-☞ *Beri Jeda 5 Detik* 💤
-☞ *Dilarang Buat Sticker Gore* 🚷
-☞ *Dilarang Buat Sticker 18+* 🔞
-☞ *Dilarang Buat Aneh Aneh* 📵
-☞ *Dilarang Buat Mainan* ⛔
-☞ *Dilarang Download Di Atas 35mb Nanti Wa Aing Lag Anjg* 🗿
-❏ *I N F O R M A T I O N*
-≻ Ⓣ : *Text*
-≻ ⓔ : *Efek*
-≻ Ⓛ : *Limit*
-≻ Ⓟ : *Premium*
-≻ ⓜ : *Maintance*`.trim()
+let anu = `★ ° . *　　　°　.　°☆ 　. * ● ¸ 
+. 　　　★ 　° :. ★　 * • ○ ° ★　 
+.　 * 　.　 　　　　　. 　 
+° 　. ● . ★ ° . *　　　°　.　°☆ 
+　. * ● ¸ . 　　　★ 　° :●. 　 * 
+• ○ ° ★　 .　 * 　.　 　　　　　.
+ 　 ° 　. ● . ★ ° . *　　　°　.　
+°☆ 　. * ● ¸ . 　　　★ ° :.☆
+° :. 　 * • ○ ° ★　 .　 * 　.　 
+　★　　　　. 　 ° 　.  . 　★★　 　　
+° °☆ 　¸. ● . 　　★　★ ° °☆
+         
+┌─────❲ ᴀʙᴏᴜᴛ ❳──────
+┊☞ ಇ( ꈍᴗꈍ)ಇ ${ucapan()}
+┊☞ 👤 *NAME* : ${name}
+┊☞ 🧭 *TIME* : ${time},
+┊☞ ✅ *DATE* : ${date},
+┊☞ 🖌️ *PREFIX* : ᴍᴜʟᴛɪ ᴘʀᴇғɪx 
+└─────────────────⸙ \n\ `.trim()
 let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
     return {
       help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
@@ -236,14 +240,14 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
         listMessage: {
             title: aoa,
             description: anu,
-            buttonText: 'PILIH DISINI',
+            buttonText: 'SELECT',
             listType: 1,
             footerText: wm,
             mtype: 'listMessage',
             sections: [
               {
                 "rows": [{
-                  "title": `Semua Perintah`,
+                  "title": `━❰･ALL MENU･❱━`,
                   "description": "Menu Semua Perintah ✨",
                   "rowId": `${_p}? all`
                   }],
