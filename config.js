@@ -1,6 +1,6 @@
-global.owner = ['6281515474080'] // Put your number here
-global.mods = ['6281515474080'] // Want some help?
-global.prems = ['6281515474080'] // Premium user has unlimited limit
+global.owner = ['94711392491'] // Put your number here
+global.mods = ['94711392491'] // Want some help?
+global.prems = ['94711392491'] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
@@ -17,8 +17,8 @@ global.APIs = { // API Prefix
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
   'https://neoxr-api.herokuapp.com': 'yntkts',
-  'https://melcanz.com': 'TeamMars',
-  'https://api.xteam.xyz': 'db0e06bd9f096399',
+  'https://melcanz.com': 'obefhhqP',
+  'https://api.xteam.xyz': '86399e0f56a8347f',
   'https://api.lolhuman.xyz': 'eafcf901640d1c599ae71519',
   'https://zahirr-web.herokuapp.com': 'zahirgans',
   'https://myselfff.herokuapp.com': '/docs',
@@ -27,16 +27,16 @@ global.APIKeys = { // APIKey Here
 }
 
 //===========Sticker WM============//
-global.packname = 'Made by'
-global.author = 'Koleksi BOT'
+global.packname = '© Alice-Md 🥀'
+global.author = 'WaBot'
 
-global.wm = 'Made by : Koleksibot'
-global.wait = '*tunggu sedang diproses...*'
-global.eror = '*maaf server sedang sibuk*'
+global.wm = '© Alice-Md 🥀'
+global.wait = 'Please Wait..'
+global.eror = '*sorry server is busy*'
 
 //========Url 1 Template Buttons=========//
 global.ig = 'Instagram Owner'
-global.lig = 'https://instagram.com/cyber_mrlinkerrorsystemoffical'
+global.lig = 'https://www.instagram.com/alicewabot/'
 
 //========Url 2 Template Buttons=========//
 global.dtu2 = 'Group Bot WhatsApp'
