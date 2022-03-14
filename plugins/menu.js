@@ -23,7 +23,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
   let arrayMenu = ['all', 'anime', 'update', 'edukasi', 'news', 'random', 'game', 'xp', 'islamic', 'stiker', 'rpg', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'vote', 'nsfw', 'audio', 'jadibot', 'info', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
-    'main': 'ALL MENU',
+    'main': 'UTAMA',
     'game': 'GAME',
     'anime': 'ANIME', 
     'rpg': 'RPG', 
@@ -31,7 +31,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     'news': 'NEWS', 
     'random': 'RANDOM',
     'xp': 'EXP & LIMIT',
-    'sticker': 'STICKER',
+    'sticker': 'STIKER',
     'kerang': 'KERANG AJAIB',
     'quotes': 'QUOTES',
     'admin': `ADMIN ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
@@ -191,25 +191,20 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     let waktuwib = moment.tz('Asia/Jakarta').format('HH:mm:ss')
     
 let aoa = `${ucapan()} ${name}.`.trim()
-let anu = `★ ° . *　　　°　.　°☆ 　. * ● ¸ 
-. 　　　★ 　° :. ★　 * • ○ ° ★　 
-.　 * 　.　 　　　　　. 　 
-° 　. ● . ★ ° . *　　　°　.　°☆ 
-　. * ● ¸ . 　　　★ 　° :●. 　 * 
-• ○ ° ★　 .　 * 　.　 　　　　　.
- 　 ° 　. ● . ★ ° . *　　　°　.　
-°☆ 　. * ● ¸ . 　　　★ ° :.☆
-° :. 　 * • ○ ° ★　 .　 * 　.　 
-　★　　　　. 　 ° 　.  . 　★★　 　　
-° °☆ 　¸. ● . 　　★　★ ° °☆
-         
-┌─────❲ ᴀʙᴏᴜᴛ ❳──────
-┊☞ ಇ( ꈍᴗꈍ)ಇ ${ucapan()}
-┊☞ 👤 *NAME* : ${name}
-┊☞ 🧭 *TIME* : ${time},
-┊☞ ✅ *DATE* : ${date},
-┊☞ 🖌️ *PREFIX* : ᴍᴜʟᴛɪ ᴘʀᴇғɪx 
-└─────────────────⸙ \n\`.trim()
+let anu = `*─────❑ 「 RULES BOT 」 ❑─────*
+☞ *Dilarang Spam* ❌
+☞ *Beri Jeda 5 Detik* 💤
+☞ *Dilarang Buat Sticker Gore* 🚷
+☞ *Dilarang Buat Sticker 18+* 🔞
+☞ *Dilarang Buat Aneh Aneh* 📵
+☞ *Dilarang Buat Mainan* ⛔
+☞ *Dilarang Download Di Atas 35mb Nanti Wa Aing Lag Anjg* 🗿
+❏ *I N F O R M A T I O N*
+≻ Ⓣ : *Text*
+≻ ⓔ : *Efek*
+≻ Ⓛ : *Limit*
+≻ Ⓟ : *Premium*
+≻ ⓜ : *Maintance*`.trim()
 let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
     return {
       help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
