@@ -9,4 +9,4 @@ handler.tags = ['downloader']
 
 handler.command = /^((facebook|fb)(downloder|dl)?)$/i
 
-export default handler
+module.exports = handler
