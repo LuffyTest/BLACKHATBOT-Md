@@ -43,8 +43,8 @@ global.dtu2 = 'Group Bot WhatsApp'
 global.urlnya2 = 'https://chat.whatsapp.com/'
 
 //=============callButtons=============//
-global.dtc = 'Source Code'
-global.urlnya2 = 'https://s.id/koleksibotku'
+global.dtc = 'Thanks For Using Me'
+global.urlnya2 = 'https://www.instagram.com/alicewabot/'
 
 
 global.multiplier = 69 // The higher, The harder levelup
