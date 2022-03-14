@@ -1,6 +1,6 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
-  if (!args[0]) throw 'Uhm...url nya mana?'
+  if (!args[0]) throw 'Uhm... where s the url?'
   let res = await fetch(global.API('xteam', '/dl/tiktok', {
     url: args[0]
   }, 'APIKEY'))
@@ -22,7 +22,7 @@ let handler = async (m, { conn, args }) => {
 ${txt}
   `.trim(), m)*/
   let url = json.result.link_dl1 || json.result.link_dl2 || ''
-  if (!url) throw 'Gagal mengambil url download'
+  if (!url) throw 'Failed to fetch download url'
   let txt = `
   - *By:* ${json.result.name}
   - *Caption:*
@@ -34,6 +34,5 @@ handler.help = ['tiktok'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 
 handler.command = /^(tik(tok)?(dl)?)$/i
-handler.limit = true
 
 module.exports = handler
