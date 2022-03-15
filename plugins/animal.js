@@ -3,7 +3,7 @@ let fetch = require('node-fetch')
 let handler = async (m, { conn, text, usedPrefix, command }) => {
   let ar = ['dog', 'cat', 'panda', 'fox', 'red_panda', 'koala', 'bird', 'raccoon', 'kangaroo']
   let er = `
-┌「 *Pilihan* 」
+┌「 *Choice* 」
 ${ar.map(v => '├ ' + v).join`\n`}
 └────
 
@@ -18,9 +18,9 @@ ${usedPrefix}${command} panda
   if (!res.ok) throw `${res.status} ${res.statusText}`
   let json = await res.json()
   if (!json.image) throw json
-  conn.sendFile(m.chat, json.image, '', `${json.fact}\n\n© ShiraoriBOT`, m)
+  conn.sendFile(m.chat, json.image, '', `${json.fact}\n\nwm`, m)
 }
-handler.help = ['animal'].map((v) => v + ' <opsi>')
+handler.help = ['animal'].map((v) => v + ' <option>')
 handler.tags = ['internet']
 handler.command = /^(animal|animalfact)$/i
 
