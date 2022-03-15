@@ -1,4 +1,4 @@
-let { GroupSettingChange } = require('@adiwajshing/baileys')
+let { GroupSettingChange } = require('@adiwajshing/baileys-md')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
 	let isClose = {
 		'open': false,
