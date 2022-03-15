@@ -9,10 +9,10 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
   await m.reply(wait)
   await conn.sendFile(m.chat, json.result.sd.url, '', 'wm', m)
 }
-handler.help = ['fb'].map(v => v + ' <url>')
+handler.help = ['ig'].map(v => v + ' <url>')
 handler.tags = ['downloader']
 
-handler.command = /^f((b|acebook)(dl|download)?(er)?)$/i
+handler.command = /^(ig(dl)?)$/i
 
 handler.premium = true
 
