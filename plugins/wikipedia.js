@@ -36,13 +36,13 @@ async function wikipedia(querry) {
   }
 }
 let handler = async (m, { conn, text }) => {
-  if (!text) throw `uhm.. cari apa?\n\ncontoh:\n.wiki nodejs`
+  if (!text) throw `uhm.. What are you looking for?\n\n🍃 Example:\n.wiki nodejs`
   wikipedia(`${text}`).then(res => {
     m.reply(res.result.isi)
-  }).catch(() => { m.reply('Tidak Ditemukan') })
+  }).catch(() => { m.reply('Not found') })
 }
-handler.help = ['wikipedia <pencarian>']
-handler.tags = ['internet']
+handler.help = ['wikipedia <search>']
+handler.tags = ['edukasi']
 handler.command = /^(wiki(pedia)?)$/i
 
 module.exports = handler
