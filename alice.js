@@ -5,20 +5,11 @@
 
 const { default: makeWASocket, BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, downloadContentFromMessage, downloadHistory, proto, getMessage, generateWAMessageContent, prepareWAMessageMedia } = require('@adiwajshing/baileys-md')
 let handler = async (m) => {
-let duit = `*────── 「 DONATE 」 ──────*
+let duit = `Hello Honey My Name is Alice. How Can i Help You? 💞 
 
-Hai 👋
-Kalian bisa mendukung saya agar bot ini tetap up to date dengan:
-┌〔 Donasi • Emoney 〕
-├ Gak Perlu Bang >~<
-└────
-Berapapun donasi kalian akan sangat berarti 👍
-
-Arigatou!
-
-Contact person Owner:
-wa.me/6181351047727 (Owner)`
-let message = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/ca517a39ce85c8a4c0479.jpg' }}, { upload: conn.waUploadToServer })
+● ᴜᴘᴛɪᴍᴇ : %uptime
+● sᴇʀᴠᴇʀ : ᴀᴢᴜʀᴇ `
+let message = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/89292e86386a9e55baf69.jpg' }}, { upload: conn.waUploadToServer })
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
          hydratedTemplate: {
@@ -27,20 +18,20 @@ let message = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/fil
            hydratedFooterText: wm,
            hydratedButtons: [{
              urlButton: {
-               displayText: '🏧 Saweria',
-               url: 'https://saweria.co/'
+               displayText: '🍃 𝙸𝙽𝚂𝚃𝙰𝙶𝚁𝙰𝙼 🍃',
+               url: 'https://www.instagram.com/alicewabot/'
              }
 
            },
                {
              callButton: {
-               displayText: 'Telkomsel',
-               phoneNumber: '+62-8123-4567-8910'
+               displayText: '🎐 𝙼𝙾𝙱𝙸𝙻𝙴 🎐',
+               phoneNumber: '+94 77 451 9383'
              }
            },           
                {
              quickReplyButton: {
-               displayText: 'Kembali Ke Menu',
+               displayText: '✨ 𝑀𝐸𝑁𝑈 ✨',
                id: '.menu',
              }
 
@@ -56,8 +47,8 @@ let message = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/fil
      )
 }
 
-handler.help = ['donasi']
+handler.help = ['alive']
 handler.tags = ['info']
-handler.command = /^dona(te|si)|bagiduit$/i
+handler.command = /^ali(ce|ive)|hello$/i
 
 module.exports = handler
