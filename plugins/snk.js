@@ -8,32 +8,51 @@ const {
 let fetch = require('node-fetch')
 let handler = async(m, { usedPrefix: _p, conn }) => {
 let teks = `
-Kebijakan Privasi, Syarat Ketentuan dan Peraturan Bot
+*Privacy Policy,Terms and Conditions and Q & A of Bot*
 
-Kebijakan Privasi
-1. BOT tidak akan merekam data riwayat chat user.
-2. BOT tidak akan menyebarkan nomor users.
-3. BOT tidak akan menyimpan media yang dikirimkan oleh users.
-4. BOT tidak akan menyalah gunakan data data users.
-5. Owner BOT berhak melihat data riwayat chat users.
-6. Owner BOT berhak melihat status users.
-7. Owner BOT dapat melihat riwayat chat, dan media yang dikirimkan users.
+━❰･Q & A･❱━*
+🔹 Q : How to add Alice bot To to Your Group?
+🔸 A : Send The Group Invite link to owners DM.
+(type .owner to get owner\'s number)
 
-Peraturan Bot
-1. Users dilarang menelpon maupun memvideo call nomor bot.
-2. Users dilarang mengirimkan berbagai bug, virtex, dll ke nomor bot.
-3. Users diharap tidak melakukan spam dalam penggunaan bot.
-4. Users dilarang menambahkan nomor bot secara illegal, untuk menambahkan silahkan hubungi owner.
-5. Users diharap untuk tidak menyalah gunakan fitur fitur bot.
-6. Users dilarang memasukkan bot di dalam grup yang penting(ada guru, dsb).
-Syarat Ketentuan Bot
-1. Bot akan keluar dari group apabila sudah waktunya keluar.
-2. BOT dapan mem-ban users secara sepihak terlepas dari users salah atau tidak.
-3. BOT *tidak akan bertanggungjawab atas apapun yang users lakukan terhadap fitur bot.*
-4. BOT akan memberlakukan hukuman: block atau ban terhadap users yang melanggar peraturan.
-5. BOT bertanggung jawab atas kesalahan fatal dalam programing maupun owner.
+🔹 Q : How Can I Deploy Alice Bot?
+🔸 A : Sorry can't deploy alice wa bot.this is not a opensource project..
+(but you can deploy Other bot..This Bot Is also Edited Version Of Other WAbot)
 
-Whatsap Bot Multi-Device 
+🔹 Q : Why Bot dosen\'t have a lot of commands?
+🔸 A : Thisbot is under under developing so plz understand that..
+(if you want add command type .report [your questions]
+
+
+
+*━❰･Privacy Policy･❱━*
+
+1. BOT will not record user chat history data.
+2. BOT will not share user numbers.
+3. BOT will not save media sent by users.
+4. BOT will not misuse user data.
+5. BOT owners have the right to view chat history data from users.
+6. The BOT owner has the right to see the status of users.
+7. BOT owners can view chat history, and media sent by users.
+
+*━❰･Bot Rules･❱━*
+
+1. Users are prohibited from calling or video calling bot numbers.
+2. Users are prohibited from sending various bugs, virtexes, etc. to the bot number.
+3. Users are expected not to spam in the use of bots.
+4. Users are prohibited from adding bot numbers illegally, to add please contact the owner.
+5. Users are expected not to abuse the bot features.
+6. Users are prohibited from including bots in important groups (there are teachers, etc.).
+
+*━❰･Bot Terms and Conditions･❱━*
+
+1. The bot will leave the group when it's time to leave.
+2. BOT can ban users unilaterally regardless of the wrong users or not.
+3. BOT *will not be responsible for anything users do to the bot feature.*
+4. BOT will impose penalties: block or ban on users who violate the rules.
+5. BOT is responsible for fatal errors in programming and owner.
+
+\`\`\`Alice Bot Multi-Device\`\`\`
 `
     const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fromObject({
         templateMessage: {
@@ -44,8 +63,8 @@ Whatsap Bot Multi-Device
                 hydratedButtons: [{
                   index: 0,
                    urlButton: {
-                        displayText: global.dtu2,
-                        url: global.urlnya2
+                        displayText: Telegram Group,
+                        url: t.me/watsappgang
                     }
                 },
                 {
