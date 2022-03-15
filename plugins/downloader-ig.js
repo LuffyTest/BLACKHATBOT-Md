@@ -1,16 +1,19 @@
-import { instagramdl, instagramdlv2, instagramdlv3, instagramdlv4 } from '@bochilteam/scraper'
+const fetch = require('node-fetch')
 let handler = async (m, { conn, args, usedPrefix, command }) => {
-    if (!args[0]) throw `Use example ${usedPrefix}${command} https://www.instagram.com/p/ByxKbUSnubS/?utm_source=ig_web_copy_link`
-    const results = await instagramdl(args[0])
-        .catch(async _ => await instagramdlv2(args[0]))
-        .catch(async _ => await instagramdlv3(args[0]))
-        .catch(async _ => await instagramdlv4(args[0]))
-    for (const { url } of results) await conn.sendFile(m.chat, url, 'instagram.mp4', `🔗 *Url:* ${url}`, m)
+  if (!args[0]) throw `uhm.. where's the url?\n\ncontoh:\n${usedPrefix + command} https://www.instagram.com/p/CTTcc4qFYau/?utm_medium=copy_link`
+  if (/^https?:\/\/.*(m.instagram.com||www.instagram.com|instagram.com)/i.test(m.text)) throw `only support url from ig and web only _please check url again_`
+
+  let res = await fetch(API('xteam', '/dl/igv2', { url: args[0] }, 'APIKEY'))
+  if (!res.ok) return m.reply(eror)
+  let json = await res.json()
+  await m.reply(wait)
+  await conn.sendFile(m.chat, json.result.url, '', '© Alice 🥀', m)
 }
 handler.help = ['ig'].map(v => v + ' <url>')
 handler.tags = ['downloader']
+
 handler.command = /^(ig|instagram)$/i
 
-handler.limit = true
+handler.premium = true
 
 module.exports = handler
