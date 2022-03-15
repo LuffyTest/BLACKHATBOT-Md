@@ -13,8 +13,8 @@ const defaultMenu = {
 ┏━〔 %me 〕
 ┠ Hey, %name!
 ┃
-┠ 🚀 Left :*%limit Limit*
-┠ 🎭 Role :*%role*
+┠ 🎗 Date :*%date*
+┠ 🔅 Time  :*%time*
 ┠ 📈 Level :*%level*
 ┠ 💠 Total XP : *%totalexp*
 ┃ 
@@ -22,12 +22,12 @@ const defaultMenu = {
 ┠ 🕓 Time: *%time*
 ┃
 ┠ 🔰 UpTime : *%uptime*
-┠ 🌿 DataBase : %rtotalreg from %totalreg
+┠ 🌿 DataBase : MongoDB
 ┗━━━━━━━━
 %readmore`.trimStart(),
   header: '┏━━━❰･%category･❱━━━',
   body: '┠ %cmd %islimit %isPremium',
-  footer: '┗━━━━\n',
+  footer: '┗━━━━━━\n',
   after: `
 *Alice 🤍🥀@^%version*
 `,
@@ -255,49 +255,49 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
                 "title": `List Menu ${conn.user.name}`
               }, {
                 "rows": [{
-                  "title": `Menu Anime`,
+                  "title": `━❰･ANIME MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? anime`
                 }],
                 "title": "─────「 1 」"
               }, {
                 "rows": [{
-                  "title": `Menu Admin & Group`,
+                  "title": `━❰･GROUP MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? admin`
                 }],
                 "title": "─────「 2 」"
               }, {
                 "rows": [{
-                  "title": `Menu Anonymous`,
+                  "title": `━❰･ANONYMOUS CHAT･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? anonymous`
                 }],
                 "title": "─────「 3 」"
               }, {
                 "rows": [{
-                  "title": `Menu Audio`,
+                  "title": `━❰･AUDIO MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? audio`
                 }],
                 "title": "─────「 4 」"
               }, {
                 "rows": [{
-                  "title": `Menu Downloader`,
+                  "title": `━❰･DOWNLOADER MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? downloader`
                 }],
                 "title": "─────「 5 」"
               }, {
                 "rows": [{
-                  "title": `Menu Database`,
+                  "title": `━❰･DATABASE･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? database`
                 }],
                 "title": "─────「 6 」"
               }, {
                 "rows": [{
-                  "title": `Menu Edukasi`,
+                  "title": `━❰･EDUCATION MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? edukasi`
                 }],
@@ -325,7 +325,7 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
                 "title": "─────「 10 」"
               }, {
                 "rows": [{
-                  "title": `Menu Internet`,
+                  "title": `━❰･INTERNET MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? internet`
                  }],
@@ -339,7 +339,7 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
                 "title": "─────「 12 」"
               }, {
                 "rows": [{
-                  "title": `Menu Jadibot`,
+                  "title": `━❰･GET BOT･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? jadibot`
                 }],
@@ -353,91 +353,91 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
                 "title": "─────「 14 」"
               }, {
                 "rows": [{
-                  "title": `Menu News`,
+                  "title": `━❰･NEWS MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? news`
                 }],
                 "title": "─────「 15 」"
               }, {
                 "rows": [{
-                  "title": `Menu Nulis & Logo`,
+                  "title": `━❰･LOGO & WRITING･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? nulis`
                 }],
                 "title": "─────「 16 」"
               }, {
                 "rows": [{
-                  "title": `Menu Nsfw`,
+                  "title": `━❰･NSFW MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? nsfw`
                 }],
                 "title": "─────「 17 」"
               }, {
                 "rows": [{
-                  "title": `Menu Premium`,
+                  "title": `━❰･PREMIUM MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? premium`
                 }],
                 "title": "─────「 18 」"
               }, {
                 "rows": [{
-                  "title": `Menu Quotes`,
+                  "title": `━❰･QUOTES MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? quotes`
                 }],
                 "title": "─────「 19 」"
               }, {
                 "rows": [{
-                  "title":  `Menu RPG`,
+                  "title":  `━❰･RPG MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? rpg`
                 }],
                 "title": "─────「 20 」"
               }, {
                 "rows": [{
-                  "title": `Menu Random`,
+                  "title": `━❰･RANDOM MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? random`
                 }],
                 "title": "─────「 21 」"
               }, {
                 "rows": [{
-                  "title":  `Menu Stiker`,
+                  "title":  `━❰･STICKER MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? stiker`
                 }],
                 "title": "─────「 22 」"
               }, {
                 "rows": [{
-                  "title":  `Menu Tools`,
+                  "title":  `━❰･TOOLS MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? tools`
                 }],
                 "title": "─────「 23 」"
               }, {
                 "rows": [{
-                  "title":  `Menu Update`,
+                  "title":  `━❰･UPDATE MENU･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? update`
                 }],
                 "title": "─────「 24 」"
               }, {
                 "rows": [{
-                  "title":  `Menu Vote & Absen`,
+                  "title":  `━❰･VOTING & ABSENT･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍)",
                   "rowId": `${_p}? vote`
                 }],
                 "title": "─────「 25 」"
                 }, {
                 "rows": [{
-                  "title":  `Menu XP dan Limit`,
+                  "title":  `━❰･EXP & LIMIT･❱━`,
                   "description": "╍╍╍╍╍╍❀❀╍╍╍╍╍╍",
                   "rowId": `${_p}? xp`
                 }],
                 "title": "─────「 26 」"
                 }, {
                 "rows": [{
-                  "title":  `Menu Owner`,
+                  "title":  `━❰･OWNER MENU･❱━`,
                   "description": `╍╍╍╍╍╍❀❀╍╍╍╍╍╍`,
                   "rowId": `${_p}? update`
                 }],
