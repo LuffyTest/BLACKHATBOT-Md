@@ -1,7 +1,7 @@
 let fetch = require('node-fetch')
 let handler = async (m, { conn, args }) => {
   if (!args[0]) throw 'Uhm... where s the url?'
-let res = await fetch(API('https://single-developers.up.railway.app', '/tiktok?url=' + (text)))
+let res = await fetch(API('https://single-developers.up.railway.app', '/tiktok' { url: text }, ))
   if (res.status !== 200) throw await res.text()
   let json = await res.json()
   if (!json.status) throw json
