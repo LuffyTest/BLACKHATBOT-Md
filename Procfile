@@ -1,1 +1,1 @@
-worker: node . --server --db 'mongodb+srv://chitoge:chitoge@cluster0.rohdl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+web: npx pm2 start npm --node-args="--optimize_for_size --max_old_space_size=460" -- run npx pm2 logs --db 'mongodb+srv://chitoge:chitoge@cluster0.rohdl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
