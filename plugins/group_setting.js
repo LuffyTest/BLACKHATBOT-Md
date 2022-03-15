@@ -28,5 +28,3 @@ handler.command = /^(gro?up)$/i
 
 handler.admin = true
 handler.botAdmin = true
-
-module.exports = handler
