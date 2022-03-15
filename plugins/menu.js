@@ -206,7 +206,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     let uptime = clockString(_uptime)
     let waktuwib = moment.tz('Asia/Colombo').format('HH:mm:ss')
     
-    let aoa = `${ucapan()} ${name}.`.trim()
+    let aoa = `Kon\'nichiwa 💕 ${name}.`.trim()
     let anu = `★ ° . *　　　°　.　°☆ 　. * ● ¸ 
 . 　　　★ 　° :. ★　 * • ○ ° ★　 
 .　 * 　.　 　　　　　. 　 
@@ -543,19 +543,19 @@ function clockString(ms) {
   return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
 function ucapan() {
-  const time = moment.tz('Asia/Jakarta').format('HH')
+  const time = moment.tz('Asia/Colombo').format('HH')
   res = "jangan lupa mam yaah, lop yu<3"
   if (time >= 4) {
-    res = "Selamat Pagi ☀"
+    res = "Good morning ☀"
   }
   if (time > 10) {
-    res = "Selamat Siang 🌞"
+    res = "Good afternoon 🌞"
   }
   if (time >= 15) {
-    res = "Selamat Sore 🌝"
+    res = "Good afternoon 🌝"
   }
   if (time >= 18) {
-    res = "Selamat Malam 🌚"
+    res = "Good night 🌚"
   }
   return res
 }
