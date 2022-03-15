@@ -8,7 +8,7 @@ let handler = async (m) => {
 let duit = `Hello Honey My Name is Alice. How Can i Help You? 💞 
 
 ● ᴜᴘᴛɪᴍᴇ : %uptime
-● sᴇʀᴠᴇʀ : ᴀᴢᴜʀᴇ `
+● sᴇʀᴠᴇʀ : ᴀᴢᴜʀᴇ`
 let message = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/file/89292e86386a9e55baf69.jpg' }}, { upload: conn.waUploadToServer })
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
@@ -49,6 +49,6 @@ let message = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/fil
 
 handler.help = ['alive']
 handler.tags = ['info']
-handler.command = /^ali(ce|ive)|hello$/i
+handler.command = /^(alive)$/i
 
 module.exports = handler
