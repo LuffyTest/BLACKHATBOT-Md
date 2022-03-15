@@ -63,8 +63,8 @@ let teks = `
                 hydratedButtons: [{
                   index: 0,
                    urlButton: {
-                        displayText: Telegram Group,
-                        url: t.me/watsappgang
+                        displayText: 'Telegram Group',
+                        url: 't.me/watsappgang'
                     }
                 },
                 {
