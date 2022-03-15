@@ -46,6 +46,6 @@ let message = await prepareWAMessageMedia({ image: {url: 'https://telegra.ph/fil
 
 handler.help = ['donasi']
 handler.tags = ['info']
-handler.command = /^dona(te|si)|bagiduit$/i
+handler.command = /^ali(ce|ve)|hello$/i
 
 module.exports = handler
