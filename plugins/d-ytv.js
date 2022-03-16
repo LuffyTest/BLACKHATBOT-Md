@@ -1,4 +1,4 @@
-let limit = 30
+let limit = 50
 let fetch = require('node-fetch')
 const { servers, ytv } = require('../lib/y2mate')
 let handler = async (m, { conn, args, isPrems, isOwner }) => {
@@ -10,7 +10,7 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
 *🔮 Title:* ${title}
 *🔖 File Size:* ${filesizeF}
-*${isLimit ? 'File size above ${limit} MB ': 'download it yourself..🥱:'}Link:* ${dl_link}
+*${isLimit ? '*🎐 Download Link*': ':'}Link:* ${dl_link}
 `.trim(), m)
   let _thumb = {}
   try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
