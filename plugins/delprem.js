@@ -5,11 +5,11 @@ let handler = async (m, { conn, text }) => {
     let who
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net'
     else who = text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat
-    if (json.includes(who)) throw `${conn.getName(who)} belum premium!`
+    if (json.includes(who)) throw `${conn.getName(who)} not premium yet!`
     let index = json.findIndex(v => (v.replace(/[^0-9]/g, '') + '@s.whatsapp.net') === (who.replace(/[^0-9]/g, '') + '@s.whatsapp.net'))
     json.splice(index, 1)
     fs.writeFileSync('./src/premium.json', JSON.stringify(json))
-    m.reply(`${conn.getName(who)} sekarang bukan premium!`)
+    m.reply(`${conn.getName(who)} now not premium!`)
 
     delete require.cache[require.resolve('../config')]
     require('../config')
