@@ -5,15 +5,15 @@ let fetch = require('node-fetch')
     let chats = Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned)
     let users = Object.entries(global.db.data.users).filter(user => user[1].banned)
     let caption = `${readMore}
-╭─「 Chat Terbanned 」
+╭─「 Banned Chat 」
 │✇ Total : ${chats.length} Chat${chats ? '\n' + chats.map(([jid], i) => `
 │• ${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
 │• ${isOwner ? '@' + jid.split`@`[0] : jid}
 `.trim()).join('\n') : ''}
 ╰────
 
-╭─「 Pengguna Terbanned 」
-│✇ Total : ${users.length} Pengguna${users ? '\n' + users.map(([jid], i) => `
+╭─「 Banned User 」
+│✇ Total : ${users.length} User${users ? '\n' + users.map(([jid], i) => `
 │• ${i + 1}. ${conn.getName(jid) == undefined ? 'Unknown' : conn.getName(jid)}
 │• ${isOwner ? '@' + jid.split`@`[0] : jid}
 `.trim()).join('\n') : ''}
