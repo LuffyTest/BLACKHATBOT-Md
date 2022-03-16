@@ -37,7 +37,7 @@ global.bacot = [
 'It\'s natural to love yourself, it\'s not natural to love your father.',
 'He said he couldn\'t lie. Yes, the eye can only see.',
 'Honey in your right hand, poison in your left hand, your soul mate remains in God\'s hands.',
-"Cheating doesnt happen because there is an intention, cheating happens because your boyfriend is still selling.
+'Cheating doesnt happen because there is an intention, cheating happens because your boyfriend is still selling.',
 'Netizens, if the thumb exercise on the cellphone doesn\'t use cooling, it\'s no wonder the comments make it hot.',
 'The match is not going anywhere, but the rivals are everywhere.',
 'The feeling I was wrong kept in your eyes. Then tomorrow I\'ll move to your nose.',
