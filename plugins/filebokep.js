@@ -1,6 +1,6 @@
 let handler  = async (m, { conn }) => {
 	
-	await m.reply('Si ajg mau coli.')
+	await m.reply('also wants to have a bite.')
   conn.reply(m.chat,`${pickRandom(global.bokep)}`, m)
 }
 handler.help = ['filebokep']
