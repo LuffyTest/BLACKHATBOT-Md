@@ -215,13 +215,12 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
 　★　　　　. 　 ° 　.  . 　★★　 　　
 ° °☆ 　¸. ● . 　　★　★ ° °☆
          
-┌─────❲ ᴀʙᴏᴜᴛ ❳──────
-┊☞ ಇ( ꈍᴗꈍ)ಇ ${ucapan()}
-┊☞ 👤 *NAME* : ${name}
-┊☞ 🧭 *TIME* : ${time},
-┊☞ ✅ *DATE* : ${date},
-┊☞ 🖌️ *PREFIX* : ᴍᴜʟᴛɪ ᴘʀᴇғɪx 
-└─────────────────⸙ \n\ `.trim()
+hey ${ucapan()}
+🔮 *NAME* : ${name}
+🧭 *TIME* : ${time},
+🎫 *DATE* : ${date},
+🧬 *PREFIX* : Multi 
+─────────────────⸙ \n\ `.trim()
 let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(plugin => {
     return {
       help: Array.isArray(plugin.tags) ? plugin.help : [plugin.help],
