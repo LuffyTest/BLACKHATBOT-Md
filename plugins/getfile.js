@@ -2,7 +2,7 @@ let cp = require('child_process')
 let { promisify } = require('util')
 let exec = promisify(cp.exec).bind(cp)
 let handler = async (m, { conn, isROwner, usedPrefix, command, text }) => {
-    if (!text) throw `uhm.. teksnya mana?\n\ncontoh\n${usedPrefix + command} main`
+    if (!text) throw `uhm.. where is the text?\n\nexample\n${usedPrefix + command} main`
     m.reply('Executing...')
     let o
     try {
