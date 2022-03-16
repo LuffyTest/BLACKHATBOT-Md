@@ -23,7 +23,7 @@ m.reply(serr)
 }
 
 handler.help = ['$']
-handler.tags = ['advanced']
+handler.tags = ['host']
 handler.customPrefix = /^[$]/
 handler.command = new RegExp
 handler.rowner = true
