@@ -67,10 +67,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     'host': 'HOST',
   }
   if (teks == 'game') tags = {
-    'game': 'Game'
+    'game': 'GAME'
   }
   if (teks == 'anime') tags = {
-    'anime': 'Anime'
+    'anime': 'ANIME'
   }
   if (teks == 'nsfw') tags = {
     'nsfw': 'Nsfw'
@@ -79,7 +79,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     'rpg': 'Rpg'
   }
   if (teks == 'edukasi') tags = {
-    'edukasi': 'Edukasi'
+    'edukasi': 'EDUCATION'
   }
   if (teks == 'news') tags = {
     'news': 'News'
@@ -100,7 +100,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     'quotes': 'Quotes'
   }
   if (teks == 'admin') tags = {
-    'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
+    'admin': `Admin`,
     'group': 'Grup'
   }
   if (teks == 'group') tags = {
@@ -144,10 +144,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     'quran': 'Al-Qur\'an'
   }
   if (teks == 'audio') tags = {
-    'audio': 'Pengubah Suara'
+    'audio': 'AUDIO'
   }
   if (teks == 'jadibot') tags = {
-    'jadibot': 'Jadi Bot'
+    'jadibot': 'GET BOT'
   }
   if (teks == 'info') tags = {
     'info': 'Info'
@@ -158,7 +158,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     'advanced': 'Advanced'
   }
  if (teks == 'nsfw') tags = {
-    'nsfw': 'Nsfw'
+    'nsfw': 'NSFW'
   }
   if (teks == 'update') tags = {
     'update': 'Update'
