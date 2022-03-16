@@ -1,1 +1,1 @@
-worker: node . --db 'mongodb+srv://chitoge:chitoge@cluster0.rohdl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+worker : npm i ffmpeg && npm i -g pm2 && pm2 && pm2 save && pm2 logs
