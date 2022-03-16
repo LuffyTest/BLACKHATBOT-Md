@@ -5,7 +5,7 @@ diupload oleh https://github.com/uhdahlah
 let axios = require("axios");
 let handler = async(m, { conn, text }) => {
 
-    if (!text) return conn.reply(m.chat, 'Masukan Nama Daerah', m)
+    if (!text) return conn.reply(m.chat, 'Enter Region Name', m)
 
   await m.reply('Searching...')
 	axios.get(`https://api.xteam.xyz/cuaca?kota=${text}&APIKEY=uhdahlah`).then ((res) => {
@@ -14,9 +14,9 @@ let handler = async(m, { conn, text }) => {
     conn.reply(m.chat, hasil, m)
 	})
 }
-handler.help = ['cuaca'].map(v => v + ' <daerah>')
+handler.help = ['weather'].map(v => v + ' <area>')
 handler.tags = ['tools']
-handler.command = /^(cuaca)$/i
+handler.command = /^(weather)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
