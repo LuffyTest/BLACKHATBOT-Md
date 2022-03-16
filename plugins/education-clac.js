@@ -1,10 +1,10 @@
-let handler = async (m, { conn, text, usedPrefix, command }) => {
+let handler = async (m, { conn, text }) => {
   let id = m.chat
   conn.math = conn.math ? conn.math : {}
   if (id in conn.math) {
     clearTimeout(conn.math[id][3])
     delete conn.math[id]
-    m.reply('Hmmm...cheat?')
+    m.reply('Hmmm...ngecheat?')
   }
   let val = text
     .replace(/[^0-9\-\/+*×÷πEe()piPI/]/g, '')
@@ -26,12 +26,13 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     if (!result) throw result
     m.reply(`*${format}* = _${result}_`)
   } catch (e) {
-    if (e == undefined) throw `Use:\n${usedPrefix + command} <expression>\n\nExample:\n${usedPrefix + command} 1 + 1`
+    if (e == undefined) throw 'Contents?'
     throw 'Incorrect format, only 0-9 and Symbols -, +, *, /, ×, , , e, (, ) are supported'
   }
 }
-handler.help = ['calc <expression>']
-handler.tags = ['edukasi']
+handler.help = ['calc <question>']
+handler.tags = ['education']
 handler.command = /^(calc(ulat(e|or))?|kalk(ulator)?)$/i
-
+handler.exp = 5
+handler.register = false
 module.exports = handler
