@@ -12,24 +12,20 @@ const defaultMenu = {
           before: `
 ┏━〔 %me 〕
 ┠ Hey, %name!
-┃
-┠ 🎗 Date :*%date*
-┠ 🔅 Time  :*%time*
-┠ 📈 Level :*%level*
-┠ 💠 Total XP : *%totalexp*
 ┃ 
-┠ 📅 Date: *%week %weton, %date*
-┠ 🕓 Time: *%time*
+┠ 📅 Date: *%week %date*
+┠ 🔅 Time: *%time*
 ┃
 ┠ 🔰 UpTime : *%uptime*
 ┠ 🌿 DataBase : MongoDB
+┠ 🔮 Web : Comming Soon
 ┗━━━━━━━━
 %readmore`.trimStart(),
   header: '┏━━━❰･%category･❱━━━',
   body: '┠ %cmd %islimit %isPremium',
   footer: '┗━━━━━━\n',
   after: `
-*Alice 🤍🥀@^%version*
+*Alice-Md🤍🥀@^%version*
 `,
 }
 
@@ -175,7 +171,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
     let name = await registered ? global.db.data.users[m.sender].name : conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
-    let locale = 'id'
+    let locale = 'en'
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let weton = ['Pahing', 'Pon', 'Wage', 'Kliwon', 'Legi'][Math.floor(d / 84600000) % 5]
     let date = d.toLocaleDateString(locale, {
@@ -241,7 +237,7 @@ let help = Object.values(global.plugins).filter(plugin => !plugin.disabled).map(
         listMessage: {
             title: aoa,
             description: anu,
-            buttonText: 'SELECT',
+            buttonText: '☵ SELECT',
             listType: 1,
             footerText: wm,
             mtype: 'listMessage',
