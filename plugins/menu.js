@@ -46,7 +46,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command, DevMode }) => {
     'sticker': 'STIKER',
     'kerang': 'KERANG AJAIB',
     'quotes': 'QUOTES',
-    'admin': `ADMIN ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
+    'admin': 'ADMIN',
     'group': 'GROUP',
     'premium': 'PREMIUM',
     'internet': 'INTERNET',
