@@ -44,5 +44,5 @@ global.bacot = [
 'Singles don\'t need to be ashamed, being single doesn\'t mean they don\'t sell, but no one wants to.',
 'If your prayer has not been answered then be patient, remember that it is not only you who pray!',
 'Still hoping and continuing to hope that over time I will be the champion of hope.',
-'I don\'t know what to type'
+'I don\'t know what to type',
 ]
