@@ -8,16 +8,16 @@ let handler = async (m, { conn, args, isPrems, isOwner }) => {
   let { dl_link, thumb, title, filesize, filesizeF} = await ytv(args[0], servers.includes(server) ? server : servers[0])
   let isLimit = (isPrems || isOwner ? 99 : limit) * 1024 < filesize
   conn.sendFile(m.chat, thumb, 'thumbnail.jpg', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
-*${isLimit ? 'Pakai ': ''}Link:* ${dl_link}
+*🔮 Title:* ${title}
+*🔖 File Size:* ${filesizeF}
+*${isLimit ? 'File size above ${limit} MB ': 'download it yourself..🥱:'}Link:* ${dl_link}
 `.trim(), m)
   let _thumb = {}
   try { _thumb = { thumbnail: await (await fetch(thumb)).buffer() } }
   catch (e) { }
   if (!isLimit) conn.sendFile(m.chat, dl_link, title + '.mp4', `
-*Title:* ${title}
-*Filesize:* ${filesizeF}
+*🔮 Title:* ${title}
+*🔖 File Size:* ${filesizeF}
 `.trim(), m, false, {
   ..._thumb,
   asDocument: chat.useDocument
