@@ -11,17 +11,17 @@ contoh: ${usedPrefix}math hard
 ┌─「 Mode 」
 ├ ${Object.keys(modes).join('\n├ ')}
 └────
-contoh: ${usedPrefix}math hard
+example: ${usedPrefix}math hard
 `.trim(), wm, 'Hard', '.math hard', 'Extreme', '.math extreme', m)
 
   let id = m.chat
-  if (id in conn.math) return conn.reply(m.chat, 'belum dijawab!', conn.math[id][0])
+  if (id in conn.math) return conn.reply(m.chat, 'not answered yet!', conn.math[id][0])
   let math = genMath(mode)
   conn.math[id] = [
-    await conn.reply(m.chat, `apa hasil dari *${math.str}*?\n\nwaktu: ${(math.time / 1000).toFixed(2)} detik\nbonus jawaban benar: ${math.bonus} XP`, m),
+    await conn.reply(m.chat, `what is the result of *${math.str}*?\n\ntime: ${(math.time / 1000).toFixed(2)} seconds\nbonus correct answer: ${math.bonus} XP`, m),
     math, 4,
     setTimeout(async () => {
-      if (conn.math[id]) await conn.sendButton(m.chat, `waktu habis!\njawabannya *${math.result}*`, wm, 'lagi', `.math ${args[0]}`, conn.math[id][0])
+      if (conn.math[id]) await conn.sendButton(m.chat, `time is up!\nanswer *${math.result}*`, wm, 'again', `.math ${args[0]}`, conn.math[id][0])
       delete conn.math[id]
     }, math.time)
   ]
