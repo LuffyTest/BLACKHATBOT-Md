@@ -6,8 +6,8 @@ let handler = async (m, { text, usedPrefix, command }) => {
   let teks = results.all.map(v => {
     switch (v.type) {
       case 'video': return `
-*🔮 Title ${v.title}* 
-*🔅 Url* \`\`\`${v.url}\`\`\`
+*🔮 Title: ${v.title}* 
+*🔅 Url:* \`\`\`${v.url}\`\`\`
 *💠 Duration:* ${v.timestamp}
 *📤 Uploaded:* ${v.ago}
 *🔖 Viewes:* ${v.views} 
