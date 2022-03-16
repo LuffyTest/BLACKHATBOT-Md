@@ -9,12 +9,12 @@ const { servers, yta, ytv } = require('../lib/y2mate')
 let yts = require('yt-search')
 let fetch = require('node-fetch')
 let handler = async (m, { conn, command, text, usedPrefix }) => {
-  if (!text) throw `uhm.. cari apa?\n\ncontoh:\n${usedPrefix + command} i see your monster`
+  if (!text) throw `uhm.. what are you looking for?\n\nexample:\n${usedPrefix + command} i see your monster`
   let chat = global.db.data.chats[m.chat]
   conn.reply(m.chat, wait, m) 
   let results = await yts(text)
   let vid = results.all.find(video => video.seconds < 3600)
-  if (!vid) throw 'Konten Tidak ditemukan'
+  if (!vid) throw 'Content Not found'
   let isVideo = /2$/.test(command)
   let yt = false
   let yt2 = false
@@ -27,11 +27,11 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
       usedServer = server
       break
     } catch (e) {
-      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\nmencoba server lain...'}`)
+      m.reply(`Server ${server} error!${servers.length >= i + 1 ? '' : '\ntrying another server...'}`)
     }
   }
-  if (yt === false) throw 'semua server gagal'
-  if (yt2 === false) throw 'semua server gagal'
+  if (yt === false) throw 'all servers fail'
+  if (yt2 === false) throw 'all servers fail'
   let { dl_link, thumb, title, filesize, filesizeF } = yt
   let konrasel = `
   
@@ -53,12 +53,12 @@ const template = generateWAMessageFromContent(m.key.remoteJid, proto.Message.fro
                     }
                 }, {
                    quickReplyButton: {
-                        displayText: `🎵 Audio`,
+                        displayText: `Audio`,
                         id: `.yta ${vid.url}`
                     }
                 }, {
                    quickReplyButton: {
-                        displayText: `⏩ Video`,
+                        displayText: `Video`,
                         id: `.ytv ${vid.url}`
                     },
                     selectedIndex: 1
