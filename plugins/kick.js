@@ -1,33 +1,28 @@
-let handler = async (m, { text, conn, isOwner, isAdmin, args }) => {
-  if (!(isAdmin || isOwner)) {
-                global.dfail('admin', m, conn)
-                throw false
-                }
-  let ownerGroup = m.chat.split`-`[0] + '@s.whatsapp.net'
-  if(m.quoted){
-if(m.quoted.sender === ownerGroup || m.quoted.sender === conn.user.jid) return;
-let usr = m.quoted.sender;
-await sock.groupParticipantsUpdate(
-  m.chat, 
-  [usr],
-  "remove" // replace this parameter with "remove", "demote" or "promote"
-)
-//conn.groupRemove(m.chat, [usr]); return;
-} 
-  if(!text && !m.quoted) return conn.reply(m.chat, `tag yang mau dikick`, m) 
-  let users = m.mentionedJid.filter(u => !(u == ownerGroup || u.includes(conn.user.jid)))
-  for (let user of users) if (user.endsWith('@s.whatsapp.net')) await sock.groupParticipantsUpdate(
-    m.chat, 
-    [user],
-    "remove" // replace this parameter with "remove", "demote" or "promote"
-)
- // await conn.groupRemove(m.chat, [user])
+let handler = async (m, { conn, args }) => {
+let fs = require('fs')
+ let ownerGroup = m.chat.split`-`[0] + '@s.whatsapp.net'
+  aki = m.quoted ? [m.quoted.sender] : m.mentionedJid
+  let users = aki.filter(u => !(u == ownerGroup || u.includes(conn.user.jid)))
+  wayy = '_bye bye Honey  💞_'
+  for (let i of users) {
+  wayy += ` @${i.split('@')[0]}`
+  }
+  conn.reply(m.chat, wayy, m, { contextInfo: { mentionedJid: users }})
+  for (let user of users) if (user.endsWith('@s.whatsapp.net')) await conn.groupRemove(m.chat, [user])
 }
-handler.help = ['kick @user']
-handler.tags = ['admin']
-handler.command = /^(kic?k|remove|tendang|\-)$/i
-
+handler.help = ['kick'].map(v => v + ' @user')
+handler.tags = ['group']
+handler.command = /^(kick|\-)$/i
+handler.owner = false
+handler.mods = false
+handler.premium = false
 handler.group = true
+handler.private = false
+
+handler.admin = true
 handler.botAdmin = true
+
+handler.fail = null
+handler.limit = false
 
 module.exports = handler
