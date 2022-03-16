@@ -338,7 +338,7 @@ ${usedPrefix}off welcome
   *${type}* successful in *${isEnable ? 'on' : 'off'}right* ${isAll ? 'for this bot' : isUser ? '' : 'for this chat'}
   `.trim(), m)
   }
-  handler.help = ['on', 'off'].map(v => v + ' <opsi>')
+  handler.help = ['on', 'off'].map(v => v + ' <option>')
   handler.tags = ['group', 'owner']
   handler.command = /^((en|dis)able|(tru|fals)e|(turn)?o(n|ff)|[01])$/i
   
