@@ -1,28 +1,28 @@
 let yts = require('yt-search')
-let handler = async (m, { conn, text }) => {
-  if (!text) return conn.eply(m.chat, 'Cari apa?', m)
+
+let handler = async (m, { text, usedPrefix, command }) => {
+  if (!text) throw `Use:\n${usedPrefix + command} <teks>\n\nEX:\n${usedPrefix + command} One Piece`
   let results = await yts(text)
   let teks = results.all.map(v => {
     switch (v.type) {
       case 'video': return `
-*Judul:* ${v.title} 
-*Link:* (${v.url})
-*Duration:* ${v.timestamp}
-*Uploaded:* ${v.ago}
-*Viewer:* ${v.views} 
- `.trim()
+*🔮 Title ${v.title}* 
+*🔅 Url* \`\`\`${v.url}\`\`\`
+*💠 Duration:* ${v.timestamp}
+*📤 Uploaded:* ${v.ago}
+*🔖 Viewes:* ${v.views} 
+      `.trim()
       case 'channel': return `
-*Chanel:* ${v.name} 
-*Link:* (${v.url})
-*Subscriber:* ${v.subCountLabel} (${v.subCount})
-*Total Video:* ${v.videoCount} video
+*${v.name}* (${v.url})
+_${v.subCountLabel} (${v.subCount}) Subscriber_
+${v.videoCount} video
 `.trim()
     }
-  }).filter(v => v).join('\n\n*=========================*\n\n')
- conn.reply(m.chat, '*───「 Youtube Search 」───*\n\n' + teks, m)
+  }).filter(v => v).join('\n========================\n')
+  m.reply(teks)
 }
-handler.help = ['ytsearch <query>']
-handler.tags = ['tools', 'internet']
+handler.help = ['', 'earch'].map(v => 'yts' + v + ' <name>')
+handler.tags = ['internet']
 handler.command = /^yts(earch)?$/i
 
 module.exports = handler
