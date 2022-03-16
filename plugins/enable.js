@@ -318,7 +318,7 @@ let handler = async (m, { conn, usedPrefix, command, args, isOwner, isAdmin, isR
             break
       default:
         if (!/[01]/.test(command)) throw `
-╭─「 Daftar Opsi 」${isOwner ? '\n│• anon\n│• antispam\n│• antitroli\n│• autoread\n│• antitoxic\n│• backup\n│• antivirus\n│• status\n│• getmsg\n│• publicjoin\n│• clear\n│• grouponly\n│•jadibot\n│• nsfw\n│• public\n│• mycontact' : ''}
+╭─「 Options 」${isOwner ? '\n│• anon\n│• antispam\n│• antitroli\n│• autoread\n│• antitoxic\n│• backup\n│• antivirus\n│• status\n│• getmsg\n│• publicjoin\n│• clear\n│• grouponly\n│•jadibot\n│• nsfw\n│• public\n│• mycontact' : ''}
 │• antilink 
 │• autolevelup 
 │• delete
@@ -335,7 +335,7 @@ ${usedPrefix}off welcome
         throw false
     }
     conn.reply(m.chat, `
-  *${type}* berhasil di *${isEnable ? 'nyala' : 'mati'}kan* ${isAll ? 'untuk bot ini' : isUser ? '' : 'untuk chat ini'}
+  *${type}* successful in *${isEnable ? 'on' : 'off'}right* ${isAll ? 'for this bot' : isUser ? '' : 'for this chat'}
   `.trim(), m)
   }
   handler.help = ['on', 'off'].map(v => v + ' <opsi>')
