@@ -1,9 +1,9 @@
 let handler = async (m, { conn, command, usedPrefix, text }) => {
   let fetch = require('node-fetch')
   let _uptime = process.uptime() * 1000
-  let a = require('moment-timezone').tz('Asia/Jakarta').format('HH:mm:ss') 
+  let a = require('moment-timezone').tz('Asia/Colombo').format('HH:mm:ss') 
   let d = new Date(new Date + 3600000)
-  let locale = 'id'
+  let locale = 'en'
     let week = d.toLocaleDateString(locale, { weekday: 'long' })
     let date = d.toLocaleDateString(locale, {
       day: 'numeric',
@@ -23,10 +23,10 @@ let handler = async (m, { conn, command, usedPrefix, text }) => {
 │✇ User : *${usergakdaftar}*
 │✇ Register : *${userdaftar}*
 │✇ Database : *MongoDB*
-│✇ Film 18+ : *pastebin.com/u/Paceusa*
+│✇ TG Group : *t.me/WhatsappGang*
 ╰─────────⳹
 `.trim()
-var as = `Tanggal : ${week}, ${date}\nWaktu : ${a} (WIB)`
+var as = `Date : ${week}, ${date}\nTime : ${a} (WIB)`
 
   await conn.sendButtonLoc(m.chat, infonyacok, as, await(await fetch(fla + `${command}`)).buffer(), [[`Menu`,  `${usedPrefix}menu`]], m)
 
