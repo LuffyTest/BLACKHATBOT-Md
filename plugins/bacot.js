@@ -44,15 +44,5 @@ global.bacot = [
 'Singles don\'t need to be ashamed, being single doesn\'t mean they don\'t sell, but no one wants to.',
 'If your prayer has not been answered then be patient, remember that it is not only you who pray!',
 'Still hoping and continuing to hope that over time I will be the champion of hope.',
-"Humans can plan, but in the end it's the balance that decides."
-'His status is spiritual, his behavior is spiritual.',
-'Failure is not a success.',
-'I wanted to eat meatballs, but how come it\'s so hot, it looks like the meatballs have a fever.',
-'I was rich too, on payday.',
-'I was dumped by my boyfriend because we have different beliefs. I\'m sure that I\'m handsome, but he\'s not.',
-"Your future depends on your dreams, so sleep more."
-'No matter how heavy your work, it will be lighter if you don\'t carry it.',
-'Do not expect too much! later fall sick!',
-'Remember! you are single,
 'I don\'t know what to type'
 ]
