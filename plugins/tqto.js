@@ -30,14 +30,14 @@ https://github.com/nekelganss
      const template = generateWAMessageFromContent(m.chat, proto.Message.fromObject({
      templateMessage: {
             hydratedTemplate: {
-                locationMessage: { jpegThumbnail: await(await fetch('https://avatars.githubusercontent.com/u/18616827?v=4')).buffer() }, 
+                locationMessage: { jpegThumbnail: await(await fetch('https://avatars.githubusercontent.com/u/98952894?s')).buffer() }, 
                 hydratedContentText: tqto,
                 hydratedFooterText: wm,
                 hydratedButtons: [{
                   index: 0,
                    urlButton: {
-                        displayText: `👻 Source Code Bot`,
-                        url: `https://github.com/koleksibot`
+                        displayText: `🎗 Telegram Group`,
+                        url: `https://t.me/whatsappgang`
                     }
                 }, {
                    quickReplyButton: {
